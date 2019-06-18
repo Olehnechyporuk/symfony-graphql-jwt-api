@@ -1,7 +1,7 @@
 version: '2'
 services:
     mysql:
-        image: mariadb:10.1
+        image: mariadb:10.2
         expose:
           - '3306'
         ports:

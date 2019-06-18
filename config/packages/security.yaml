@@ -1,12 +1,12 @@
 security:
     encoders:
         App\Entity\User:
-            algorithm: argon2i
+            algorithm: bcrypt
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         # used to reload user from session & other features (e.g. switch_user)
-        app_user_provider:
+        entity_provider:
             entity:
                 class: App\Entity\User
                 property: email
@@ -26,6 +26,7 @@ security:
         api:
             pattern:   ^/api
             stateless: true
+            provider: entity_provider
             guard:
                 authenticators:
                     - lexik_jwt_authentication.jwt_token_authenticator
