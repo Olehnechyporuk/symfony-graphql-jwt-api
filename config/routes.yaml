@@ -1,6 +1,10 @@
 index:
   path: /
-  controller: App\Controller\ApiController::index
+  controller: App\Controller\Frontend\AuthController::index
+
+registration:
+  path: /registration
+  controller: App\Controller\Frontend\AuthController::registration
 
 register:
   path: /register

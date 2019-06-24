@@ -10,6 +10,6 @@ class ApiController extends Controller
 {
     public function index()
     {
-        return $this->render('index.html.twig', []);
+        return $this->render(':frontend/auth:index.html.twig', []);
     }
 }
