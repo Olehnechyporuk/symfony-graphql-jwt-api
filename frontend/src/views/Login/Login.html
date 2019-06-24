@@ -1,0 +1,20 @@
+<v-container fill-height>
+    <v-layout align-center justify-center>
+        <v-flex xs12 sm8 md6>
+            <auth-form ref="authForm">
+                <template slot="btn-actions">
+                    <v-btn dark color="indigo" @click="admin($event)">
+                        Registration
+                    </v-btn>
+
+                    <v-spacer></v-spacer>
+
+                    <v-btn dark color="primary" type="submit" @click="login($event)">
+                        Login
+                        <v-icon>keyboard_arrow_right</v-icon>
+                    </v-btn>
+                </template>
+            </auth-form>
+        </v-flex>
+    </v-layout>
+</v-container>

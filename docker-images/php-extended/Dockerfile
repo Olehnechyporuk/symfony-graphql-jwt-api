@@ -37,5 +37,14 @@ RUN pecl install -o -f redis \
 #Smtp
 RUN apt-get install -y ssmtp
 
+#install node
+ENV NVM_DIR      /usr/local/nvm
+ENV NODE_VERSION v10.16.0
+ENV NODE_PATH    $NVM_DIR/versions/node/$NODE_VERSION/lib/node_modules
+ENV PATH         $NVM_DIR/versions/node/$NODE_VERSION/bin:$PATH
+
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash \
+    && /bin/bash -c "source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION && nvm use --delete-prefix $NODE_VERSION" \
+    && ln $NVM_DIR/versions/node/$NODE_VERSION/bin/node /usr/bin/node
 
 EXPOSE 8080
